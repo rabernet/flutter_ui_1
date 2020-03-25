@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_1/components/clipper.dart';
 
 class Entrada2 extends StatelessWidget {
   const Entrada2({Key key}) : super(key: key);
@@ -83,4 +82,35 @@ class Entrada2 extends StatelessWidget {
   }
 
 
+}
+
+
+class MyClipper3 extends CustomClipper<Path>{
+
+  @override
+  Path getClip(Size size){
+    var path = Path();
+    path.lineTo(0, size.height-160);
+    path.quadraticBezierTo(size.width/2, size.height+50, size.width, size.height-157);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+
+
+    // var path = Path();
+    // path.lineTo(0, size.height-100);
+    // // path.quadraticBezierTo(size.width/2, size.width-100, size.width, size.height);
+    // path.quadraticBezierTo(size.width/2, size.height, size.width, size.height-100);
+    // // path.lineTo(size.width, size.height);
+    // path.lineTo(size.width, 0);
+    // path.close();
+    
+    // return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    // TODO: implement shouldReclip
+    return false;
+  }
 }
